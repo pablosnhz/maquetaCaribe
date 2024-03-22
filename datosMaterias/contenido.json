@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+const primerNivel = [
+    {
+        "pregunta": "¿En qué película Bruce Willis interpreta a John McClane, un policía que se enfrenta a terroristas en un rascacielos?",
+        "opciones": {
+            "La era del hielo": false,
+            "Duro de Matar": true,
+            "Difícil de Matar": false,
+            "Riesgo Total": false
+        },
+        "respuesta": "Duro de Matar"
+    },
+    {
+        "pregunta": "¿Quién dirigió la película 'Titanic'?",
+        "opciones": {
+            "Martin Scorsese": false,
+            "Steven Spielberg": false,
+            "James Cameron": true,
+            "Quentin Tarantino": false
+        },
+        "respuesta": "James Cameron"
+    },
+    {
+        "pregunta": "¿En qué película aparece el personaje 'Forrest Gump'?",
+        "opciones": {
+            "Pulp Fiction": false,
+            "Salvar al Soldado Ryan": false,
+            "Forrest Gump": true,
+            "Sueño de Fuga": false
+        },
+        "respuesta": "Forrest Gump"
+    }
+];
+
+const segundoNivel = [
+    {
+        "pregunta": "¿Cuál es la capital de Francia?",
+        "opciones": {
+            "Londres": false,
+            "París": true,
+            "Berlín": false,
+            "Madrid": false
+        },
+        "respuesta": "París"
+    },
+    {
+        "pregunta": "¿En qué año comenzó la Primera Guerra Mundial?",
+        "opciones": {
+            "1914": true,
+            "1918": false,
+            "1939": false,
+            "1945": false
+        },
+        "respuesta": "1914"
+    },
+    {
+        "pregunta": "¿Quién pintó la Mona Lisa?",
+        "opciones": {
+            "Leonardo da Vinci": true,
+            "Pablo Picasso": false,
+            "Vincent van Gogh": false,
+            "Claude Monet": false
+        },
+        "respuesta": "Leonardo da Vinci"
+    }
+];
+
+const tercerNivel = [
+    {
+        "pregunta": "¿Cuál es la película que ganó el Premio Óscar a la Mejor Película en 1994?",
+        "opciones": {
+            "Forrest Gump": false,
+            "Pulp Fiction": false,
+            "La Lista de Schindler": true,
+            "Titanic": false
+        },
+        "respuesta": "La lista de Schindler"
+    },
+    {
+        "pregunta": "¿En qué película Clint Eastwood interpreta a un cazarrecompensas llamado 'El Hombre sin Nombre'?",
+        "opciones": {
+            "Por un Puñado de Dólares": true,
+            "El Bueno, el Malo y el Feo": false,
+            "La Muerte Tenía un Precio": false,
+            "Sin Perdón": false
+        },
+        "respuesta": "Por un Puñado de Dólares"
+    },
+    {
+        "pregunta": "¿Quién interpretó el papel de Tony Stark / Iron Man en el Universo Cinematográfico de Marvel?",
+        "opciones": {
+            "Chris Evans": false,
+            "Chris Hemsworth": false,
+            "Robert Downey Jr.": true,
+            "Mark Ruffalo": false
+        },
+        "respuesta": "Robert Downey Jr."
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
