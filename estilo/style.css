@@ -25,12 +25,16 @@
     font-weight: bold;
 }
 
+
 .box-style {
     border-radius: 20px;
-    height: 30rem;
     padding: 10px;
     margin-top: 4rem;
     border: 2px solid black;
+}
+
+.caja {
+    margin-top: 2rem;
 }
 
 .caja h1{
@@ -45,17 +49,21 @@
     display: flex;
     justify-content: space-around; 
     gap: 1rem; 
+    text-align: center;
+    align-items: flex-end;
+}
+
+.container-image a {
+    font-size: 0.7em;
+    display: block;
 }
 
 .container-image img {
     margin-top: 50px;
-    max-width: 40px;
+    max-width: 90%;
     height: auto;
 }
 
-.container-image a {
-    font-size: 14px;
-}
 
 .estilo-letra{
     color: rgb(122, 130, 138);
@@ -178,9 +186,23 @@
     padding: 5px 25px;
     background-color: #21bf73;
 }
+
+
+
+
+
+
+
 @media(max-width:576px){
     .question{
         width: 100%;
         word-spacing: 2px;
     } 
+}
+
+@media (max-width: 576px) {
+    .box-style {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

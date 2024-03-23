@@ -7,42 +7,28 @@
     <title>Materias</title>
     <link rel="stylesheet" href="./../estilo/style.css">
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light mt-3">
-            <div class="container-fluid">
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+    <header id="header" class="mb-3">
+        <nav class="navbar navbar-expand-md bg-white">
+            <div class="container">
+                <a class="navbar-brand fs-2 text-black">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="navbar-nav mx-auto">
-                        <ul class="navbar-nav">
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="./../materias/matematica/matematica.html">Matematicas</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="./../materias/linguistica/linguistica.html">Linguistica</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="#seccion3">Sociales y ciudadanas</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="#seccion4">Ciencias naturales</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link" href="#seccion5">Ingles</a>
-                            </li>
-                            <li class="mt-1 px-4">
-                                <a class="navbar-brand text-white radius-inicio" href="./../home/home.html">Volver</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav ms-auto" style="gap: 10px;">
+                        <li class="nav-item">
+                            <a class="navbar-brand text-white radius-inicio" href="./../home/home.html">Volver</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-        <hr>
+    </header>
     
-        <div id="inicio" class="container mt-3">
+        <div id="inicio" class="container">
             <h1 class="display-2 font-weight-bold">Mi Progreso</h1>
-            <div class="row gap-4">
+            <div class="row gap-4 col-lg-12 col-md-10 col-sm-12 mx-auto">
                 <div class="col box-style"> 
                     <div class="caja">
                         <h1>Matematicas</h1>
@@ -171,38 +157,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col box-style">
-                    <div class="caja">
-                        <h1>Ingles</h1>
-                        <div class="mt-5">
-                            <img src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-test-paper-examination-student-subjects-png-image_6727584.jpg" 
-                            class="img-fluid">
-                        </div>
-                        <div class="container-image">
-                            <a href="" class="cursor-pointer">
-                                <div>
-                                    <img src="https://icones.pro/wp-content/uploads/2022/08/icone-de-cadenas-de-securite-gris.png" 
-                                    class="img-fluid">
-                                    <a>Nivel 1</a>
-                                </div>
-                            </a>
-                            <a href="" class="cursor-pointer">
-                                <div>
-                                    <img src="https://icones.pro/wp-content/uploads/2022/08/icone-de-cadenas-de-securite-gris.png" 
-                                    class="img-fluid">
-                                    <a>Nivel 2</a>
-                                </div>
-                            </a>
-                            <a href="" class="cursor-pointer">
-                                <div>
-                                    <img src="https://icones.pro/wp-content/uploads/2022/08/icone-de-cadenas-de-securite-gris.png" 
-                                    class="img-fluid">
-                                    <a>Nivel 3</a>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -216,4 +170,3 @@
     <script src="./../materias/matematica/logica/script.js"></script>
 </body>
 </html>
-
