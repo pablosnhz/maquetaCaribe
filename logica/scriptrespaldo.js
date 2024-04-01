@@ -1,496 +1,176 @@
-let currentQuestionIndex = 0;
-let alertaMostrada = false;
+document.addEventListener("DOMContentLoaded", function () {
+    const questionsContainer = document.getElementById('questions-container');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    let currentQuestionIndex = 0;
+    let questionsData = null;
+    const totalQuestionsToShow = 15;
+    let currentLevel = 1;
 
-const primerNivel = [
-    {
-        "pregunta": "¿En qué película Bruce Willis interpreta a John McClane, un policía que se enfrenta a terroristas en un rascacielos?",
-        "opciones": {
-            "La era del hielo": false,
-            "Duro de Matar": true,
-            "Difícil de Matar": false,
-            "Riesgo Total": false
-        },
-        "respuesta": "Duro de Matar"
-    },
-    {
-        "pregunta": "¿Quién dirigió la película 'Titanic'?",
-        "opciones": {
-            "Martin Scorsese": false,
-            "Steven Spielberg": false,
-            "James Cameron": true,
-            "Quentin Tarantino": false
-        },
-        "respuesta": "James Cameron"
-    },
-    {
-        "pregunta": "¿En qué película aparece el personaje 'Forrest Gump'?",
-        "opciones": {
-            "Pulp Fiction": false,
-            "Salvar al Soldado Ryan": false,
-            "Forrest Gump": true,
-            "Sueño de Fuga": false
-        },
-        "respuesta": "Forrest Gump"
+
+    function loadQuestions(nivel) {
+
+        fetch('./../../../json/matematica/nivelUnoMat.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se puede cargar el JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                questionsData = data.preguntas.find(item => item.nivel === nivel).preguntas;
+                questionsData = questionsData.slice(0, totalQuestionsToShow);
+                currentQuestionIndex = 0; 
+                showQuestion(currentQuestionIndex);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
-];
 
-const segundoNivel = [
-    {
-        "pregunta": "¿Cuál es la capital de Francia?",
-        "opciones": {
-            "Londres": false,
-            "París": true,
-            "Berlín": false,
-            "Madrid": false
-        },
-        "respuesta": "París"
-    },
-    {
-        "pregunta": "¿En qué año comenzó la Primera Guerra Mundial?",
-        "opciones": {
-            "1914": true,
-            "1918": false,
-            "1939": false,
-            "1945": false
-        },
-        "respuesta": "1914"
-    },
-    {
-        "pregunta": "¿Quién pintó la Mona Lisa?",
-        "opciones": {
-            "Leonardo da Vinci": true,
-            "Pablo Picasso": false,
-            "Vincent van Gogh": false,
-            "Claude Monet": false
-        },
-        "respuesta": "Leonardo da Vinci"
-    }
-];
+    function showQuestion(index) {
+        if (questionsData && index >= 0 && index < questionsData.length) {
+            const pregunta = questionsData[index];
+            const storedResponse = localStorage.getItem(`response_${currentLevel}_${index}`);
+            const storedCorrect = localStorage.getItem(`correct_${currentLevel}_${index}`);
 
-const tercerNivel = [
-    {
-        "pregunta": "¿Cuál es la película que ganó el Premio Óscar a la Mejor Película en 1994?",
-        "opciones": {
-            "Forrest Gump": false,
-            "Pulp Fiction": false,
-            "La Lista de Schindler": true,
-            "Titanic": false
-        },
-        "respuesta": "La lista de Schindler"
-    },
-    {
-        "pregunta": "¿En qué película Clint Eastwood interpreta a un cazarrecompensas llamado 'El Hombre sin Nombre'?",
-        "opciones": {
-            "Por un Puñado de Dólares": true,
-            "El Bueno, el Malo y el Feo": false,
-            "La Muerte Tenía un Precio": false,
-            "Sin Perdón": false
-        },
-        "respuesta": "Por un Puñado de Dólares"
-    },
-    {
-        "pregunta": "¿Quién interpretó el papel de Tony Stark / Iron Man en el Universo Cinematográfico de Marvel?",
-        "opciones": {
-            "Chris Evans": false,
-            "Chris Hemsworth": false,
-            "Robert Downey Jr.": true,
-            "Mark Ruffalo": false
-        },
-        "respuesta": "Robert Downey Jr."
-    }
-]
+    
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('container', 'mt-sm-5', 'my-1');
+    
+            questionDiv.innerHTML = `
+                <div class="question ml-sm-5 pl-sm-5 pt-2">
+                    <div class="py-2 h5 mb-4"><b>Pregunta ${pregunta.Pregunta}: ${pregunta.Enunciado}</b></div>
+                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options${index}">
+                        <div class="option mb-2">
+                            <input type="radio" id="option_a" name="options${index}" value="a" ${(storedResponse === 'a') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
+                            <label for="option_a">A) ${pregunta['Opción a']}</label>
+                        </div>
+                        <div class="option mb-2">
+                            <input type="radio" id="option_b" name="options${index}" value="b" ${(storedResponse === 'b') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
+                            <label for="option_b">B) ${pregunta['Opción b']}</label>
+                        </div>
+                        <div class="option mb-2">
+                            <input type="radio" id="option_c" name="options${index}" value="c" ${(storedResponse === 'c') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
+                            <label for="option_c">C) ${pregunta['Opción c']}</label>
+                        </div>
+                        <div class="option mb-2">
+                            <input type="radio" id="option_d" name="options${index}" value="d" ${(storedResponse === 'd') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
+                            <label for="option_d">D) ${pregunta['Opción d']}</label>
+                        </div>
+                    </div>
+                    <div class="alert alert-success alert-dismissible fade show text-center ${storedCorrect === 'true' ? '' : 'd-none'}" id="alertCorrect${index}" role="alert">
+                        <strong>¡Respuesta correcta!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="alert alert-danger alert-dismissible fade show text-center ${storedCorrect === 'false' ? '' : 'd-none'}" id="alertIncorrect${index}" role="alert">
+                        <strong>La respuesta correcta era: ${pregunta.Respuestas}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <a href="#" class="bg-transparent border-0 justification-link" data-bs-toggle="modal" data-bs-target="#static${index}">
+                            <strong>Conocé la justificación. Haz Click aquí.</strong>
+                        </a>
+                    </div>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="static${index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    ${pregunta.Explicación}
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-gray border border-dark text-black" data-bs-dismiss="modal">Ok! Gracias.</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            `;
+            
+            questionsContainer.innerHTML = '';
+            questionsContainer.appendChild(questionDiv);
 
-// NIVEL 1
+            const options = questionDiv.querySelectorAll(`input[name="options${index}"]`);
+            options.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedOption = questionDiv.querySelector(`input[name="options${index}"]:checked`).value;
+                const isCorrect = selectedOption === pregunta.Respuestas.charAt(0);
+                localStorage.setItem(`response_${currentLevel}_${index}`, selectedOption);
+                localStorage.setItem(`correct_${currentLevel}_${index}`, isCorrect.toString());
 
-function renderQuestion(index) {
-    const question = primerNivel[index];
-    const container = document.getElementById('questions-container');
-    container.innerHTML = `
-        <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b>${question.pregunta}</b></div>
-            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                ${renderOptions(question.opciones, index)}
-            </div>
-        </div>
-    `;
-    const containers = document.getElementById('respuestaJson');
-    containers.textContent = question.respuesta;
+                if (isCorrect) {
+                    questionDiv.querySelector(`#alertCorrect${index}`).classList.remove('d-none');
+                    questionDiv.querySelector(`#alertIncorrect${index}`).classList.add('d-none');
+                } else {
+                    questionDiv.querySelector(`#alertIncorrect${index}`).classList.remove('d-none');
+                    questionDiv.querySelector(`#alertCorrect${index}`).classList.add('d-none');
 
+                }
 
-    const selectedAnswer = localStorage.getItem(`question_primer_${index}`);
-    if (selectedAnswer) {
-        const radioInput = container.querySelector(`input[value="${selectedAnswer}"]`);
-        if (radioInput) {
-            radioInput.checked = true;
+                options.forEach(option => {
+                    if (selectedOption !== option.value) {
+                        option.disabled = true;
+
+                        // al responder las 15 preguntas detecta el check
+                        updateLevelLockButton(currentLevel);
+                    }
+                });
+            });
+        });
+
+            // logica para el check
+            updateLevelLockButton(currentLevel);
         }
     }
-}
 
-function renderOptions(options, index) {
-    let html = '';
-    const selectedAnswer = localStorage.getItem(`question_primer_${index}`);
-    for (const option in options) {
-        const checked = option === selectedAnswer ? 'checked' : '';
-        html += `
-            <label class="options">${option}
-                <input type="radio" name="radio" value="${option}" ${checked} onchange="saveSelectedAnswer(${index}, '${option}')">
-                <span class="checkmark"></span>
-            </label>
-        `;
-    }
-    return html;
-}
-
-function saveSelectedAnswer(index, option) {
-    localStorage.setItem(`question_primer_${index}`, option); 
-}
-
-function showNext() {
-    const selectedAnswer = document.querySelector('input[name="radio"]:checked')?.value;
-    if (selectedAnswer) {
-        saveSelectedAnswer(currentQuestionIndex, selectedAnswer);
+    function updateLevelLockButton(level) {
+        const allAnswered = Array.from({ length: totalQuestionsToShow }, (_, i) =>
+            localStorage.getItem(`response_${level}_${i}`) !== null
+        ).every(Boolean);
+    
+        const levelLockButton = document.getElementById(`levelLockButton${level}`);
+        if (allAnswered) {
+            levelLockButton.innerHTML = '<i class="bi bi-check-lg"></i>';
+            levelLockButton.classList.remove('btn-secondary');
+            levelLockButton.classList.add('btn-success');
+        } else {
+            levelLockButton.innerHTML = '<i class="bi bi-lock"></i>';
+            levelLockButton.classList.remove('btn-success');
+            levelLockButton.classList.add('btn-secondary');
+        }
     }
     
-    currentQuestionIndex = Math.min(currentQuestionIndex + 1, primerNivel.length - 1);
-    renderQuestion(currentQuestionIndex);
-}
 
-function showPrevious() {
-    const selectedAnswer = document.querySelector('input[name="radio"]:checked')?.value;
-    if (selectedAnswer) {
-        saveSelectedAnswer(currentQuestionIndex, selectedAnswer);
-    }
-    
-    currentQuestionIndex = Math.max(currentQuestionIndex - 1, 0);
-    renderQuestion(currentQuestionIndex);
-}
+    loadQuestions(1);
+    // loadQuestions(currentLevel);
 
-
-// mostamos en orden las preguntas
-renderQuestion(currentQuestionIndex);
-
-// * RESULTADO NIVELES
-function mostrarRespuestasIncorrectas() {
-    let respuestasIncorrectas = [];
-    primerNivel.forEach((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_primer_${index}`);
-        if (respuestaUsuario !== pregunta.respuesta) {
-            respuestasIncorrectas.push({ pregunta: pregunta.pregunta, respuestaCorrecta: pregunta.respuesta });
+    prevButton.addEventListener('click', function () {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            showQuestion(currentQuestionIndex);
         }
     });
 
-    if (respuestasIncorrectas.length > 0) {
-        alert('Tienes respuestas incorrectas primer nivel.');
-    } else {
-        alert('Todas las respuestas del primer nivel son correctas.');
-        localStorage.setItem('nivel_desbloqueado', true);
-        document.getElementById('nivelUno').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-    }
-}
-
-function todasRespuestasCorrectas() {
-    return primerNivel.every((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_primer_${index}`);
-        return respuestaUsuario === pregunta.respuesta;
+    nextButton.addEventListener('click', function () {
+        if (currentQuestionIndex < questionsData.length - 1) {
+            currentQuestionIndex++;
+            showQuestion(currentQuestionIndex);
+        }
     });
-}
 
-window.onload = function () {
-    const currentUrl = window.location.href;
 
-    if (localStorage.getItem('nivel_desbloqueado') === 'true') {
-        document.getElementById('nivelUno').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-    }
-    if (localStorage.getItem('nivel_desbloqueado_segundo') === 'true') {
-        document.getElementById('nivelDos').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-    }
-    if (localStorage.getItem('nivel_desbloqueado_tercer') === 'true') {
-        document.getElementById('nivelTres').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-    }
 
-    // Verificamos en qué nivel nos encontramos
-    if (currentUrl.includes("matematicaNivelUno")) {
-        currentLevel = 1;
-        renderQuestion(currentQuestionIndex);
-    } else if (currentUrl.includes("matematicaNivelDos")) {
-        currentLevel = 2;
-        renderQuestionSegundoNivel(currentQuestionIndex);
-    } else if (currentUrl.includes("matematicaNivelTres")) {
-        currentLevel = 3;
-        renderQuestionTercerNivel(currentQuestionIndex);
-    }
-}
 
-document.getElementById('mostrarRespuestasBtn').addEventListener('click', function(){
-    if (currentLevel === 1) {
-        mostrarRespuestasIncorrectas();
-    } else if (currentLevel === 2) {
-        mostrarRespuestasIncorrectasSegundoNivel();
-    } else if (currentLevel === 3){
-        mostrarRespuestasIncorrectasTercerNivel();
+    // logica para desbloqueo de niveles
+    for (let i = 1; i <= 4; i++) {
+        const levelLockButton = document.getElementById(`levelLockButton${i}`);
+        levelLockButton.addEventListener('click', function() {
+            currentLevel = i;
+            loadQuestions(currentLevel);
+        });
     }
 });
-
-document.getElementById('mostrarRespuestasBtn').addEventListener('click', function(){
-    if (currentLevel === 1) {
-        mostrarRespuestasIncorrectas();
-    } else if (currentLevel === 2) {
-        mostrarRespuestasIncorrectasSegundoNivel();
-    } else if (currentLevel === 3){
-        mostrarRespuestasIncorrectasTercerNivel();
-    }
-
-});
-
-renderQuestionSegundoNivel(currentQuestionIndex);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// SEGUNDO NIVEL
-
-let currentLevel = 1;
-
-function renderQuestionSegundoNivel(index) {
-    const question = segundoNivel[index];
-    const container = document.getElementById('questions-container');
-    container.innerHTML = `
-        <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b>${question.pregunta}</b></div>
-            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                ${renderOptionsSegundoNivel(question.opciones, index)}
-            </div>
-        </div>
-    `;
-    const containers = document.getElementById('respuestaJson');
-    containers.textContent = question.respuesta;
-
-    const selectedAnswer = localStorage.getItem(`question_segundo_${index}`);
-    if (selectedAnswer) {
-        const radioInput = container.querySelector(`input[value="${selectedAnswer}"]`);
-        if (radioInput) {
-            radioInput.checked = true;
-        }
-    }
-}
-
-function saveSelectedAnswerSegundoNivel(index, option) {
-    localStorage.setItem(`question_segundo_${index}`, option);
-}
-
-function showNextSegundoNivel() {
-    saveSelectedAnswerSegundoNivel();
-    currentQuestionIndex = Math.min(currentQuestionIndex + 1, segundoNivel.length - 1);
-    renderQuestionSegundoNivel(currentQuestionIndex);
-}
-
-function showPreviousSegundoNivel() {
-    saveSelectedAnswerSegundoNivel();
-    currentQuestionIndex = Math.max(currentQuestionIndex - 1, 0);
-    renderQuestionSegundoNivel(currentQuestionIndex);
-}
-
-function saveSelectedAnswerSegundoNivel() {
-    const selectedAnswer = document.querySelector('input[name="radio"]:checked');
-    if (selectedAnswer) {
-        localStorage.setItem(`question_segundo_${currentQuestionIndex}`, selectedAnswer.value);
-    }
-}
-
-function renderOptionsSegundoNivel(options, index) {
-    let html = '';
-    const selectedAnswer = localStorage.getItem(`question_${index}`);
-    for (const option in options) {
-        const checked = option === selectedAnswer ? 'checked' : '';
-        html += `
-            <label class="options">${option}
-                <input type="radio" name="radio" value="${option}" ${checked} onchange="saveSelectedAnswerSegundoNivel(${index}, '${option}')">
-                <span class="checkmark"></span>
-            </label>
-        `;
-    }
-    return html;
-}
-
-// * RESULTADO NIVELES
-function mostrarRespuestasIncorrectasSegundoNivel() {
-    let respuestasIncorrectas = [];
-    segundoNivel.forEach((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_segundo_${index}`);
-        if (respuestaUsuario !== pregunta.respuesta) {
-            respuestasIncorrectas.push({ pregunta: pregunta.pregunta, respuestaCorrecta: pregunta.respuesta });
-        }
-    });
-
-    if (respuestasIncorrectas.length > 0 && !alertaMostrada) {
-        alert('Tienes respuestas incorrectas en el segundo nivel.');
-        alertaMostrada = true; 
-    } else if (respuestasIncorrectas.length === 0 && !alertaMostrada) {
-        alert('Todas las respuestas del segundo nivel son correctas.');
-        document.getElementById('nivelDos').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-        localStorage.setItem('nivel_desbloqueado_segundo', true);
-        alertaMostrada = true;
-    }
-}
-
-// * Desbloqueo de nivel 
-function todasRespuestasCorrectasSegundoNivel() {
-    return segundoNivel.every((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_segundo_${index}`);
-        return respuestaUsuario === pregunta.respuesta;
-    });
-}
-
-document.getElementById('mostrarRespuestasBtn').addEventListener('click', function(){
-    mostrarRespuestasIncorrectasSegundoNivel();
-});
-
-renderQuestionSegundoNivel(currentQuestionIndex);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// NIVEL 3
-
-function renderQuestionTercerNivel(index) {
-    const question = tercerNivel[index];
-    const container = document.getElementById('questions-container');
-    container.innerHTML = `
-        <div class="question ml-sm-5 pl-sm-5 pt-2">
-            <div class="py-2 h5"><b>${question.pregunta}</b></div>
-            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-                ${renderOptionsTercerNivel(question.opciones, index)}
-            </div>
-        </div>
-    `;
-    const containers = document.getElementById('respuestaJson');
-    containers.textContent = question.respuesta;
-
-    const selectedAnswer = localStorage.getItem(`question_${index}`);
-    if (selectedAnswer) {
-        const radioInput = container.querySelector(`input[value="${selectedAnswer}"]`);
-        if (radioInput) {
-            radioInput.checked = true;
-        }
-    }
-}
-
-function saveSelectedAnswerTercerNivel(index, option) {
-    localStorage.setItem(`question_tercer_${index}`, option);
-}
-
-function showNextTercerNivel() {
-    const selectedAnswer = document.querySelector('input[name="radio"]:checked');
-    if (selectedAnswer) {
-        saveSelectedAnswerTercerNivel(currentQuestionIndex, selectedAnswer.value);
-    }
-    currentQuestionIndex = Math.min(currentQuestionIndex + 1, tercerNivel.length - 1);
-    renderQuestionTercerNivel(currentQuestionIndex);
-}
-
-function showPreviousTercerNivel() {
-    const selectedAnswer = document.querySelector('input[name="radio"]:checked');
-    if (selectedAnswer) {
-        saveSelectedAnswerTercerNivel(currentQuestionIndex, selectedAnswer.value);
-    }
-    currentQuestionIndex = Math.max(currentQuestionIndex - 1, 0);
-    renderQuestionTercerNivel(currentQuestionIndex);
-}
-
-
-
-
-
-
-function renderOptionsTercerNivel(options, index) {
-    let html = '';
-    const selectedAnswer = localStorage.getItem(`question_tercer_${index}`);
-    for (const option in options) {
-        const checked = option === selectedAnswer ? 'checked' : '';
-        html += `
-            <label class="options">${option}
-                <input type="radio" name="radio" value="${option}" ${checked} onchange="saveSelectedAnswerTercerNivel(${index}, '${option}')">
-                <span class="checkmark"></span>
-            </label>
-        `;
-    }
-    return html;
-}
-
-
-// * RESULTADO NIVELES
-function mostrarRespuestasIncorrectasTercerNivel() {
-    let respuestasIncorrectas = [];
-    tercerNivel.forEach((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_tercer_${index}`).toLowerCase();
-        const respuestaCorrecta = pregunta.respuesta.toLowerCase();
-        if (respuestaUsuario !== respuestaCorrecta) {
-            respuestasIncorrectas.push({ pregunta: pregunta.pregunta, respuestaCorrecta: pregunta.respuesta });
-        }
-    });
-
-    if (respuestasIncorrectas.length > 0) {
-        alert('Tienes respuestas incorrectas en el tercer nivel.');
-        alertaMostrada = true; 
-    } else {
-        alert('Todas las respuestas del tercer nivel son correctas.');
-        document.getElementById('nivelTres').querySelector('img').src = 'https://cdn-icons-png.freepik.com/256/5610/5610944.png';
-        localStorage.setItem('nivel_desbloqueado_tercer', true);
-        alertaMostrada = true; 
-    }
-}
-
-// * Desbloqueo de nivel 
-function todasRespuestasCorrectasTercerNivel() {
-    return tercerNivel.every((pregunta, index) => {
-        const respuestaUsuario = localStorage.getItem(`question_tercer_${index}`);
-        return respuestaUsuario === pregunta.respuesta;
-    });
-}
-
-
-document.getElementById('mostrarRespuestasBtn').addEventListener('click', function(){
-    mostrarRespuestasIncorrectasTercerNivel();
-});
-
-renderQuestionTercerNivel(currentQuestionIndex);
 
 
 

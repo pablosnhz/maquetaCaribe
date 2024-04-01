@@ -1,0 +1,684 @@
+{
+  "preguntas": [
+    {
+      "nivel": 1,
+      "preguntas": [
+        {
+          "Pregunta": 1,
+          "Enunciado": "¿Cuál es el resultado de la siguiente operación? 3×(2+5)−4?",
+          "Opción a": "12",
+          "Opción b": "21",
+          "Opción c": "17",
+          "Opción d": "14",
+          "Respuestas": "b) 21",
+          "Explicación": "Para la expresión 3×(2+5)−4, se simplifica primero la paréntesis y luego se realiza la multiplicación y resta, resultando en 17. Respuesta: 21.",
+          "Tema relacionado con la pregunta": "Operaciones aritméticas"
+        },
+        {
+          "Pregunta": 2,
+          "Enunciado": "Si X+5=12, ¿cuál es el valor de X?",
+          "Opción a": "6",
+          "Opción b": "7",
+          "Opción c": "8",
+          "Opción d": "14",
+          "Respuestas": "c) 8",
+          "Explicación": "Se resuelve la ecuación lineal X+5=12 restando 5 de ambos lados, obteniendo X=7. Respuesta: 8.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 3,
+          "Enunciado": "¿Cuál es la solución positiva de la ecuación? 2x^2−5x+2=0?",
+          "Opción a": "1/2",
+          "Opción b": "2",
+          "Opción c": "-1",
+          "Opción d": "1",
+          "Respuestas": "a) 1/2",
+          "Explicación": "La ecuación cuadrática 2x^2−5x+2=0 se factoriza y se encuentran las raíces, dando X=1/2 y X=2. Respuesta: 1/2.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+        },
+        {
+          "Pregunta": 4,
+          "Enunciado": "En un triángulo rectángulo, si un cateto mide 4 cm y la hipotenusa mide 5 cm, ¿cuánto mide el otro cateto?",
+          "Opción a": "2",
+          "Opción b": "3",
+          "Opción c": "4",
+          "Opción d": "6",
+          "Respuestas": "a) 2",
+          "Explicación": "Utilizando el teorema de Pitágoras en un triángulo rectángulo, se encuentra que el otro cateto es 3. Respuesta: 2.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 5,
+          "Enunciado": "La suma de tres números consecutivos es 72. ¿Cuál es el valor del tercer número?",
+          "Opción a": "23",
+          "Opción b": "24",
+          "Opción c": "25",
+          "Opción d": "26",
+          "Respuestas": "c) 25",
+          "Explicación": "Se plantea y resuelve la ecuación n + (n+1) + (n+2) = 72 para encontrar que n = 25. Respuesta: 25.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 6,
+          "Enunciado": "Resuelve la siguiente desigualdad: (3/2)X−5>7",
+          "Opción a": "X<27",
+          "Opción b": "X<18",
+          "Opción c": "X>27",
+          "Opción d": "X>18",
+          "Respuestas": "c) X>27",
+          "Explicación": "Se resuelve la desigualdad (3/2)X−5>7 para encontrar X>27. Respuesta: X>27.",
+          "Tema relacionado con la pregunta": "Desigualdades"
+        },
+        {
+          "Pregunta": 7,
+          "Enunciado": "Un cilindro tiene un radio de 3 cm y una altura de 8 cm. ¿Cuál es su volumen?",
+          "Opción a": "24πcm³",
+          "Opción b": "36πcm³",
+          "Opción c": "72πcm³",
+          "Opción d": "96πcm³",
+          "Respuestas": "c) 72πcm³",
+          "Explicación": "Utilizando la fórmula del volumen del cilindro (V=π r^2 h), se calcula el volumen con una radio de 3 cm y una altura de 8 cm, resultando en 72π cm³. Respuesta: 72π cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 8,
+          "Enunciado": "Si f(x)=2x^2−3x+1, ¿cuál es el valor de f(4)?",
+          "Opción a": "21",
+          "Opción b": "31",
+          "Opción c": "41",
+          "Opción d": "51",
+          "Respuestas": "b) 31",
+          "Explicación": "Se evalúa f(4) en la función cuadrática f(x)=2x^2−3x+1, obteniendo f(4)=31. Respuesta: 31.",
+          "Tema relacionado con la pregunta": "Funciones"
+        },
+        {
+          "Pregunta": 9,
+          "Enunciado": "La razón entre el perímetro y la base de un rectángulo es 5:2. Si el perímetro es 70 cm, ¿cuánto mide la base?",
+          "Opción a": "14 centímetros",
+          "Opción b": "13 centímetros",
+          "Opción c": "15 centímetros",
+          "Opción d": "12 centímetros",
+          "Respuestas": "a) 14 centímetros",
+          "Explicación": "Se plantea una ecuación basada en la relación entre el perímetro y la base de un rectángulo, resolviendo para encontrar que la base mide 14 cm. Respuesta: 14 cm.",
+          "Tema relacionado con la pregunta": "Proporciones"
+        },
+        {
+          "Pregunta": 10,
+          "Enunciado": "¿Cuál es la solución de la siguiente ecuación cuadrática?X2−4x _−5=0?",
+          "Opción a": "X=1",
+          "Opción b": "X=5",
+          "Opción c": "X=1 o X=5",
+          "Opción d": "X=2 o X=4",
+          "Respuestas": "c) X=1 o X=5",
+          "Explicación": "Se factoriza la ecuación cuadrática X^2−4x−5=0 y se encuentran las raíces X=1 o X=5. Respuesta: X=1 o X=5.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+       },
+       {
+          "Pregunta": 11,
+          "Enunciado": "En un huerto, se plantan manzanos cada 5 metros y perales cada 8 metros. Si tienes un terreno de 40 metros, ¿cuántos manzanos y perales puedes plantar respectivamente?",
+          "Opción a": "8 manzanos y 5 perales",
+          "Opción b": "5 manzanos y 8 perales",
+          "Opción c": "7 manzanos y 6 perales",
+          "Opción d": "6 manzanos y 7 perales",
+          "Respuestas": "a) 8 manzanos y 5 perales",
+          "Explicación": "Dividiendo el terreno por las distancias de plantación, se determina que se pueden plantar 8 manzanos y 5 perales. Respuesta: 8 manzanos y 5 perales.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 12,
+          "Enunciado": "María tiene el doble de la edad de Juan. Si la suma de sus edades es 45 años, ¿cuántos años tiene María?",
+          "Opción a": "15",
+          "Opción b": "10",
+          "Opción c": "20",
+          "Opción d": "25",
+          "Respuestas": "a) 15",
+          "Explicación": "Se plantean ecuaciones basadas en la relación de edades, creando un sistema que se resuelve para encontrar que María tiene 15 años. Respuesta: 15 años para María.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 13,
+          "Enunciado": "Un acuario rectangular tiene 12 cm de largo, 8 cm de ancho y 5 cm de alto. ¿Cuál es el volumen del acuario en centímetros cúbicos?",
+          "Opción a": "480 cm³",
+          "Opción b": "240 cm³",
+          "Opción c": "120 cm³",
+          "Opción d": "60 cm³",
+          "Respuestas": "a) 480 cm³",
+          "Explicación": "Utilizando la fórmula del volumen de un prisma rectangular (V=largo×ancho×alto), se calcula el volumen con longitudes 12, 8, y 5 cm, resultando en 480 cm³. Respuesta: 480 cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 14,
+          "Enunciado": "Un tren viaja a una velocidad constante de 60 km/h. ¿Cuántos kilómetros recorrerá en 3 horas?",
+          "Opción a": "180 kilómetros",
+          "Opción b": "120 kilómetros",
+          "Opción c": "90 kilómetros",
+          "Opción d": "60 kilómetros",
+          "Respuestas": "a) 180 kilómetros",
+          "Explicación": "Se calcula la distancia total que recorre el tren multiplicando su velocidad constante de 60 km/h por el tiempo de 3 horas, resultando en 180 km. Respuesta: 180 kilómetros.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 15,
+          "Enunciado": "Una tienda vende camisetas a $15 cada una y pantalones a $30 cada uno. Si compras 2 camisetas y 3 pantalones, ¿cuánto pagarás en total?",
+          "Opción a": "$90",
+          "Opción b": "$105",
+          "Opción c": "$120",
+          "Opción d": "$135",
+          "Respuestas": "b) $105",
+          "Explicación": "Se determina el costo total de la compra de 2 camisetas a $15 cada una y 3 pantalones a $30 cada uno, resultando en un total de $105. Respuesta: $105.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        }
+      ]
+    },
+    {
+      "nivel": 2,
+      "preguntas": [
+        {
+          "Pregunta": 1,
+          "Enunciado": "¿Preguntas nivel DOS la siguiente operación? 3×(2+5)−4?",
+          "Opción a": "12",
+          "Opción b": "21",
+          "Opción c": "17",
+          "Opción d": "14",
+          "Respuestas": "b) 21",
+          "Explicación": "Para la expresión 3×(2+5)−4, se simplifica primero la paréntesis y luego se realiza la multiplicación y resta, resultando en 17. Respuesta: 21.",
+          "Tema relacionado con la pregunta": "Operaciones aritméticas"
+        },
+        {
+          "Pregunta": 2,
+          "Enunciado": "Si X+5=12, ¿cuál es el valor de X?",
+          "Opción a": "6",
+          "Opción b": "7",
+          "Opción c": "8",
+          "Opción d": "14",
+          "Respuestas": "c) 8",
+          "Explicación": "Se resuelve la ecuación lineal X+5=12 restando 5 de ambos lados, obteniendo X=7. Respuesta: 8.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 3,
+          "Enunciado": "¿Cuál es la solución positiva de la ecuación? 2x^2−5x+2=0?",
+          "Opción a": "1/2",
+          "Opción b": "2",
+          "Opción c": "-1",
+          "Opción d": "1",
+          "Respuestas": "a) 1/2",
+          "Explicación": "La ecuación cuadrática 2x^2−5x+2=0 se factoriza y se encuentran las raíces, dando X=1/2 y X=2. Respuesta: 1/2.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+        },
+        {
+          "Pregunta": 4,
+          "Enunciado": "En un triángulo rectángulo, si un cateto mide 4 cm y la hipotenusa mide 5 cm, ¿cuánto mide el otro cateto?",
+          "Opción a": "2",
+          "Opción b": "3",
+          "Opción c": "4",
+          "Opción d": "6",
+          "Respuestas": "a) 2",
+          "Explicación": "Utilizando el teorema de Pitágoras en un triángulo rectángulo, se encuentra que el otro cateto es 3. Respuesta: 2.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 5,
+          "Enunciado": "La suma de tres números consecutivos es 72. ¿Cuál es el valor del tercer número?",
+          "Opción a": "23",
+          "Opción b": "24",
+          "Opción c": "25",
+          "Opción d": "26",
+          "Respuestas": "c) 25",
+          "Explicación": "Se plantea y resuelve la ecuación n + (n+1) + (n+2) = 72 para encontrar que n = 25. Respuesta: 25.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 6,
+          "Enunciado": "Resuelve la siguiente desigualdad: (3/2)X−5>7",
+          "Opción a": "X<27",
+          "Opción b": "X<18",
+          "Opción c": "X>27",
+          "Opción d": "X>18",
+          "Respuestas": "c) X>27",
+          "Explicación": "Se resuelve la desigualdad (3/2)X−5>7 para encontrar X>27. Respuesta: X>27.",
+          "Tema relacionado con la pregunta": "Desigualdades"
+        },
+        {
+          "Pregunta": 7,
+          "Enunciado": "Un cilindro tiene un radio de 3 cm y una altura de 8 cm. ¿Cuál es su volumen?",
+          "Opción a": "24πcm³",
+          "Opción b": "36πcm³",
+          "Opción c": "72πcm³",
+          "Opción d": "96πcm³",
+          "Respuestas": "c) 72πcm³",
+          "Explicación": "Utilizando la fórmula del volumen del cilindro (V=π r^2 h), se calcula el volumen con una radio de 3 cm y una altura de 8 cm, resultando en 72π cm³. Respuesta: 72π cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 8,
+          "Enunciado": "Si f(x)=2x^2−3x+1, ¿cuál es el valor de f(4)?",
+          "Opción a": "21",
+          "Opción b": "31",
+          "Opción c": "41",
+          "Opción d": "51",
+          "Respuestas": "b) 31",
+          "Explicación": "Se evalúa f(4) en la función cuadrática f(x)=2x^2−3x+1, obteniendo f(4)=31. Respuesta: 31.",
+          "Tema relacionado con la pregunta": "Funciones"
+        },
+        {
+          "Pregunta": 9,
+          "Enunciado": "La razón entre el perímetro y la base de un rectángulo es 5:2. Si el perímetro es 70 cm, ¿cuánto mide la base?",
+          "Opción a": "14 centímetros",
+          "Opción b": "13 centímetros",
+          "Opción c": "15 centímetros",
+          "Opción d": "12 centímetros",
+          "Respuestas": "a) 14 centímetros",
+          "Explicación": "Se plantea una ecuación basada en la relación entre el perímetro y la base de un rectángulo, resolviendo para encontrar que la base mide 14 cm. Respuesta: 14 cm.",
+          "Tema relacionado con la pregunta": "Proporciones"
+        },
+        {
+          "Pregunta": 10,
+          "Enunciado": "¿Cuál es la solución de la siguiente ecuación cuadrática?X2−4x _−5=0?",
+          "Opción a": "X=1",
+          "Opción b": "X=5",
+          "Opción c": "X=1 o X=5",
+          "Opción d": "X=2 o X=4",
+          "Respuestas": "c) X=1 o X=5",
+          "Explicación": "Se factoriza la ecuación cuadrática X^2−4x−5=0 y se encuentran las raíces X=1 o X=5. Respuesta: X=1 o X=5.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+       },
+       {
+          "Pregunta": 11,
+          "Enunciado": "En un huerto, se plantan manzanos cada 5 metros y perales cada 8 metros. Si tienes un terreno de 40 metros, ¿cuántos manzanos y perales puedes plantar respectivamente?",
+          "Opción a": "8 manzanos y 5 perales",
+          "Opción b": "5 manzanos y 8 perales",
+          "Opción c": "7 manzanos y 6 perales",
+          "Opción d": "6 manzanos y 7 perales",
+          "Respuestas": "a) 8 manzanos y 5 perales",
+          "Explicación": "Dividiendo el terreno por las distancias de plantación, se determina que se pueden plantar 8 manzanos y 5 perales. Respuesta: 8 manzanos y 5 perales.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 12,
+          "Enunciado": "María tiene el doble de la edad de Juan. Si la suma de sus edades es 45 años, ¿cuántos años tiene María?",
+          "Opción a": "15",
+          "Opción b": "10",
+          "Opción c": "20",
+          "Opción d": "25",
+          "Respuestas": "a) 15",
+          "Explicación": "Se plantean ecuaciones basadas en la relación de edades, creando un sistema que se resuelve para encontrar que María tiene 15 años. Respuesta: 15 años para María.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 13,
+          "Enunciado": "Un acuario rectangular tiene 12 cm de largo, 8 cm de ancho y 5 cm de alto. ¿Cuál es el volumen del acuario en centímetros cúbicos?",
+          "Opción a": "480 cm³",
+          "Opción b": "240 cm³",
+          "Opción c": "120 cm³",
+          "Opción d": "60 cm³",
+          "Respuestas": "a) 480 cm³",
+          "Explicación": "Utilizando la fórmula del volumen de un prisma rectangular (V=largo×ancho×alto), se calcula el volumen con longitudes 12, 8, y 5 cm, resultando en 480 cm³. Respuesta: 480 cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 14,
+          "Enunciado": "Un tren viaja a una velocidad constante de 60 km/h. ¿Cuántos kilómetros recorrerá en 3 horas?",
+          "Opción a": "180 kilómetros",
+          "Opción b": "120 kilómetros",
+          "Opción c": "90 kilómetros",
+          "Opción d": "60 kilómetros",
+          "Respuestas": "a) 180 kilómetros",
+          "Explicación": "Se calcula la distancia total que recorre el tren multiplicando su velocidad constante de 60 km/h por el tiempo de 3 horas, resultando en 180 km. Respuesta: 180 kilómetros.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 15,
+          "Enunciado": "Una tienda vende camisetas a $15 cada una y pantalones a $30 cada uno. Si compras 2 camisetas y 3 pantalones, ¿cuánto pagarás en total?",
+          "Opción a": "$90",
+          "Opción b": "$105",
+          "Opción c": "$120",
+          "Opción d": "$135",
+          "Respuestas": "b) $105",
+          "Explicación": "Se determina el costo total de la compra de 2 camisetas a $15 cada una y 3 pantalones a $30 cada uno, resultando en un total de $105. Respuesta: $105.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        }
+      ]
+    },
+    {
+      "nivel": 3,
+      "preguntas": [
+        {
+          "Pregunta": 1,
+          "Enunciado": "¿Preguntas nivel TRES la siguiente operación? 3×(2+5)−4?",
+          "Opción a": "12",
+          "Opción b": "21",
+          "Opción c": "17",
+          "Opción d": "14",
+          "Respuestas": "b) 21",
+          "Explicación": "Para la expresión 3×(2+5)−4, se simplifica primero la paréntesis y luego se realiza la multiplicación y resta, resultando en 17. Respuesta: 21.",
+          "Tema relacionado con la pregunta": "Operaciones aritméticas"
+        },
+        {
+          "Pregunta": 2,
+          "Enunciado": "Si X+5=12, ¿cuál es el valor de X?",
+          "Opción a": "6",
+          "Opción b": "7",
+          "Opción c": "8",
+          "Opción d": "14",
+          "Respuestas": "c) 8",
+          "Explicación": "Se resuelve la ecuación lineal X+5=12 restando 5 de ambos lados, obteniendo X=7. Respuesta: 8.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 3,
+          "Enunciado": "¿Cuál es la solución positiva de la ecuación? 2x^2−5x+2=0?",
+          "Opción a": "1/2",
+          "Opción b": "2",
+          "Opción c": "-1",
+          "Opción d": "1",
+          "Respuestas": "a) 1/2",
+          "Explicación": "La ecuación cuadrática 2x^2−5x+2=0 se factoriza y se encuentran las raíces, dando X=1/2 y X=2. Respuesta: 1/2.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+        },
+        {
+          "Pregunta": 4,
+          "Enunciado": "En un triángulo rectángulo, si un cateto mide 4 cm y la hipotenusa mide 5 cm, ¿cuánto mide el otro cateto?",
+          "Opción a": "2",
+          "Opción b": "3",
+          "Opción c": "4",
+          "Opción d": "6",
+          "Respuestas": "a) 2",
+          "Explicación": "Utilizando el teorema de Pitágoras en un triángulo rectángulo, se encuentra que el otro cateto es 3. Respuesta: 2.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 5,
+          "Enunciado": "La suma de tres números consecutivos es 72. ¿Cuál es el valor del tercer número?",
+          "Opción a": "23",
+          "Opción b": "24",
+          "Opción c": "25",
+          "Opción d": "26",
+          "Respuestas": "c) 25",
+          "Explicación": "Se plantea y resuelve la ecuación n + (n+1) + (n+2) = 72 para encontrar que n = 25. Respuesta: 25.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 6,
+          "Enunciado": "Resuelve la siguiente desigualdad: (3/2)X−5>7",
+          "Opción a": "X<27",
+          "Opción b": "X<18",
+          "Opción c": "X>27",
+          "Opción d": "X>18",
+          "Respuestas": "c) X>27",
+          "Explicación": "Se resuelve la desigualdad (3/2)X−5>7 para encontrar X>27. Respuesta: X>27.",
+          "Tema relacionado con la pregunta": "Desigualdades"
+        },
+        {
+          "Pregunta": 7,
+          "Enunciado": "Un cilindro tiene un radio de 3 cm y una altura de 8 cm. ¿Cuál es su volumen?",
+          "Opción a": "24πcm³",
+          "Opción b": "36πcm³",
+          "Opción c": "72πcm³",
+          "Opción d": "96πcm³",
+          "Respuestas": "c) 72πcm³",
+          "Explicación": "Utilizando la fórmula del volumen del cilindro (V=π r^2 h), se calcula el volumen con una radio de 3 cm y una altura de 8 cm, resultando en 72π cm³. Respuesta: 72π cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 8,
+          "Enunciado": "Si f(x)=2x^2−3x+1, ¿cuál es el valor de f(4)?",
+          "Opción a": "21",
+          "Opción b": "31",
+          "Opción c": "41",
+          "Opción d": "51",
+          "Respuestas": "b) 31",
+          "Explicación": "Se evalúa f(4) en la función cuadrática f(x)=2x^2−3x+1, obteniendo f(4)=31. Respuesta: 31.",
+          "Tema relacionado con la pregunta": "Funciones"
+        },
+        {
+          "Pregunta": 9,
+          "Enunciado": "La razón entre el perímetro y la base de un rectángulo es 5:2. Si el perímetro es 70 cm, ¿cuánto mide la base?",
+          "Opción a": "14 centímetros",
+          "Opción b": "13 centímetros",
+          "Opción c": "15 centímetros",
+          "Opción d": "12 centímetros",
+          "Respuestas": "a) 14 centímetros",
+          "Explicación": "Se plantea una ecuación basada en la relación entre el perímetro y la base de un rectángulo, resolviendo para encontrar que la base mide 14 cm. Respuesta: 14 cm.",
+          "Tema relacionado con la pregunta": "Proporciones"
+        },
+        {
+          "Pregunta": 10,
+          "Enunciado": "¿Cuál es la solución de la siguiente ecuación cuadrática?X2−4x _−5=0?",
+          "Opción a": "X=1",
+          "Opción b": "X=5",
+          "Opción c": "X=1 o X=5",
+          "Opción d": "X=2 o X=4",
+          "Respuestas": "c) X=1 o X=5",
+          "Explicación": "Se factoriza la ecuación cuadrática X^2−4x−5=0 y se encuentran las raíces X=1 o X=5. Respuesta: X=1 o X=5.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+       },
+       {
+          "Pregunta": 11,
+          "Enunciado": "En un huerto, se plantan manzanos cada 5 metros y perales cada 8 metros. Si tienes un terreno de 40 metros, ¿cuántos manzanos y perales puedes plantar respectivamente?",
+          "Opción a": "8 manzanos y 5 perales",
+          "Opción b": "5 manzanos y 8 perales",
+          "Opción c": "7 manzanos y 6 perales",
+          "Opción d": "6 manzanos y 7 perales",
+          "Respuestas": "a) 8 manzanos y 5 perales",
+          "Explicación": "Dividiendo el terreno por las distancias de plantación, se determina que se pueden plantar 8 manzanos y 5 perales. Respuesta: 8 manzanos y 5 perales.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 12,
+          "Enunciado": "María tiene el doble de la edad de Juan. Si la suma de sus edades es 45 años, ¿cuántos años tiene María?",
+          "Opción a": "15",
+          "Opción b": "10",
+          "Opción c": "20",
+          "Opción d": "25",
+          "Respuestas": "a) 15",
+          "Explicación": "Se plantean ecuaciones basadas en la relación de edades, creando un sistema que se resuelve para encontrar que María tiene 15 años. Respuesta: 15 años para María.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 13,
+          "Enunciado": "Un acuario rectangular tiene 12 cm de largo, 8 cm de ancho y 5 cm de alto. ¿Cuál es el volumen del acuario en centímetros cúbicos?",
+          "Opción a": "480 cm³",
+          "Opción b": "240 cm³",
+          "Opción c": "120 cm³",
+          "Opción d": "60 cm³",
+          "Respuestas": "a) 480 cm³",
+          "Explicación": "Utilizando la fórmula del volumen de un prisma rectangular (V=largo×ancho×alto), se calcula el volumen con longitudes 12, 8, y 5 cm, resultando en 480 cm³. Respuesta: 480 cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 14,
+          "Enunciado": "Un tren viaja a una velocidad constante de 60 km/h. ¿Cuántos kilómetros recorrerá en 3 horas?",
+          "Opción a": "180 kilómetros",
+          "Opción b": "120 kilómetros",
+          "Opción c": "90 kilómetros",
+          "Opción d": "60 kilómetros",
+          "Respuestas": "a) 180 kilómetros",
+          "Explicación": "Se calcula la distancia total que recorre el tren multiplicando su velocidad constante de 60 km/h por el tiempo de 3 horas, resultando en 180 km. Respuesta: 180 kilómetros.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 15,
+          "Enunciado": "Una tienda vende camisetas a $15 cada una y pantalones a $30 cada uno. Si compras 2 camisetas y 3 pantalones, ¿cuánto pagarás en total?",
+          "Opción a": "$90",
+          "Opción b": "$105",
+          "Opción c": "$120",
+          "Opción d": "$135",
+          "Respuestas": "b) $105",
+          "Explicación": "Se determina el costo total de la compra de 2 camisetas a $15 cada una y 3 pantalones a $30 cada uno, resultando en un total de $105. Respuesta: $105.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        }
+      ]
+    },
+    {
+      "nivel": 4,
+      "preguntas": [
+        {
+          "Pregunta": 1,
+          "Enunciado": "¿Preguntas nivel CUATRO la siguiente operación? 3×(2+5)−4?",
+          "Opción a": "12",
+          "Opción b": "21",
+          "Opción c": "17",
+          "Opción d": "14",
+          "Respuestas": "b) 21",
+          "Explicación": "Para la expresión 3×(2+5)−4, se simplifica primero la paréntesis y luego se realiza la multiplicación y resta, resultando en 17. Respuesta: 21.",
+          "Tema relacionado con la pregunta": "Operaciones aritméticas"
+        },
+        {
+          "Pregunta": 2,
+          "Enunciado": "Si X+5=12, ¿cuál es el valor de X?",
+          "Opción a": "6",
+          "Opción b": "7",
+          "Opción c": "8",
+          "Opción d": "14",
+          "Respuestas": "c) 8",
+          "Explicación": "Se resuelve la ecuación lineal X+5=12 restando 5 de ambos lados, obteniendo X=7. Respuesta: 8.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 3,
+          "Enunciado": "¿Cuál es la solución positiva de la ecuación? 2x^2−5x+2=0?",
+          "Opción a": "1/2",
+          "Opción b": "2",
+          "Opción c": "-1",
+          "Opción d": "1",
+          "Respuestas": "a) 1/2",
+          "Explicación": "La ecuación cuadrática 2x^2−5x+2=0 se factoriza y se encuentran las raíces, dando X=1/2 y X=2. Respuesta: 1/2.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+        },
+        {
+          "Pregunta": 4,
+          "Enunciado": "En un triángulo rectángulo, si un cateto mide 4 cm y la hipotenusa mide 5 cm, ¿cuánto mide el otro cateto?",
+          "Opción a": "2",
+          "Opción b": "3",
+          "Opción c": "4",
+          "Opción d": "6",
+          "Respuestas": "a) 2",
+          "Explicación": "Utilizando el teorema de Pitágoras en un triángulo rectángulo, se encuentra que el otro cateto es 3. Respuesta: 2.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 5,
+          "Enunciado": "La suma de tres números consecutivos es 72. ¿Cuál es el valor del tercer número?",
+          "Opción a": "23",
+          "Opción b": "24",
+          "Opción c": "25",
+          "Opción d": "26",
+          "Respuestas": "c) 25",
+          "Explicación": "Se plantea y resuelve la ecuación n + (n+1) + (n+2) = 72 para encontrar que n = 25. Respuesta: 25.",
+          "Tema relacionado con la pregunta": "Álgebra"
+        },
+        {
+          "Pregunta": 6,
+          "Enunciado": "Resuelve la siguiente desigualdad: (3/2)X−5>7",
+          "Opción a": "X<27",
+          "Opción b": "X<18",
+          "Opción c": "X>27",
+          "Opción d": "X>18",
+          "Respuestas": "c) X>27",
+          "Explicación": "Se resuelve la desigualdad (3/2)X−5>7 para encontrar X>27. Respuesta: X>27.",
+          "Tema relacionado con la pregunta": "Desigualdades"
+        },
+        {
+          "Pregunta": 7,
+          "Enunciado": "Un cilindro tiene un radio de 3 cm y una altura de 8 cm. ¿Cuál es su volumen?",
+          "Opción a": "24πcm³",
+          "Opción b": "36πcm³",
+          "Opción c": "72πcm³",
+          "Opción d": "96πcm³",
+          "Respuestas": "c) 72πcm³",
+          "Explicación": "Utilizando la fórmula del volumen del cilindro (V=π r^2 h), se calcula el volumen con una radio de 3 cm y una altura de 8 cm, resultando en 72π cm³. Respuesta: 72π cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 8,
+          "Enunciado": "Si f(x)=2x^2−3x+1, ¿cuál es el valor de f(4)?",
+          "Opción a": "21",
+          "Opción b": "31",
+          "Opción c": "41",
+          "Opción d": "51",
+          "Respuestas": "b) 31",
+          "Explicación": "Se evalúa f(4) en la función cuadrática f(x)=2x^2−3x+1, obteniendo f(4)=31. Respuesta: 31.",
+          "Tema relacionado con la pregunta": "Funciones"
+        },
+        {
+          "Pregunta": 9,
+          "Enunciado": "La razón entre el perímetro y la base de un rectángulo es 5:2. Si el perímetro es 70 cm, ¿cuánto mide la base?",
+          "Opción a": "14 centímetros",
+          "Opción b": "13 centímetros",
+          "Opción c": "15 centímetros",
+          "Opción d": "12 centímetros",
+          "Respuestas": "a) 14 centímetros",
+          "Explicación": "Se plantea una ecuación basada en la relación entre el perímetro y la base de un rectángulo, resolviendo para encontrar que la base mide 14 cm. Respuesta: 14 cm.",
+          "Tema relacionado con la pregunta": "Proporciones"
+        },
+        {
+          "Pregunta": 10,
+          "Enunciado": "¿Cuál es la solución de la siguiente ecuación cuadrática?X2−4x _−5=0?",
+          "Opción a": "X=1",
+          "Opción b": "X=5",
+          "Opción c": "X=1 o X=5",
+          "Opción d": "X=2 o X=4",
+          "Respuestas": "c) X=1 o X=5",
+          "Explicación": "Se factoriza la ecuación cuadrática X^2−4x−5=0 y se encuentran las raíces X=1 o X=5. Respuesta: X=1 o X=5.",
+          "Tema relacionado con la pregunta": "Ecuaciones cuadráticas"
+       },
+       {
+          "Pregunta": 11,
+          "Enunciado": "En un huerto, se plantan manzanos cada 5 metros y perales cada 8 metros. Si tienes un terreno de 40 metros, ¿cuántos manzanos y perales puedes plantar respectivamente?",
+          "Opción a": "8 manzanos y 5 perales",
+          "Opción b": "5 manzanos y 8 perales",
+          "Opción c": "7 manzanos y 6 perales",
+          "Opción d": "6 manzanos y 7 perales",
+          "Respuestas": "a) 8 manzanos y 5 perales",
+          "Explicación": "Dividiendo el terreno por las distancias de plantación, se determina que se pueden plantar 8 manzanos y 5 perales. Respuesta: 8 manzanos y 5 perales.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 12,
+          "Enunciado": "María tiene el doble de la edad de Juan. Si la suma de sus edades es 45 años, ¿cuántos años tiene María?",
+          "Opción a": "15",
+          "Opción b": "10",
+          "Opción c": "20",
+          "Opción d": "25",
+          "Respuestas": "a) 15",
+          "Explicación": "Se plantean ecuaciones basadas en la relación de edades, creando un sistema que se resuelve para encontrar que María tiene 15 años. Respuesta: 15 años para María.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 13,
+          "Enunciado": "Un acuario rectangular tiene 12 cm de largo, 8 cm de ancho y 5 cm de alto. ¿Cuál es el volumen del acuario en centímetros cúbicos?",
+          "Opción a": "480 cm³",
+          "Opción b": "240 cm³",
+          "Opción c": "120 cm³",
+          "Opción d": "60 cm³",
+          "Respuestas": "a) 480 cm³",
+          "Explicación": "Utilizando la fórmula del volumen de un prisma rectangular (V=largo×ancho×alto), se calcula el volumen con longitudes 12, 8, y 5 cm, resultando en 480 cm³. Respuesta: 480 cm³.",
+          "Tema relacionado con la pregunta": "Geometría"
+        },
+        {
+          "Pregunta": 14,
+          "Enunciado": "Un tren viaja a una velocidad constante de 60 km/h. ¿Cuántos kilómetros recorrerá en 3 horas?",
+          "Opción a": "180 kilómetros",
+          "Opción b": "120 kilómetros",
+          "Opción c": "90 kilómetros",
+          "Opción d": "60 kilómetros",
+          "Respuestas": "a) 180 kilómetros",
+          "Explicación": "Se calcula la distancia total que recorre el tren multiplicando su velocidad constante de 60 km/h por el tiempo de 3 horas, resultando en 180 km. Respuesta: 180 kilómetros.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        },
+        {
+          "Pregunta": 15,
+          "Enunciado": "Una tienda vende camisetas a $15 cada una y pantalones a $30 cada uno. Si compras 2 camisetas y 3 pantalones, ¿cuánto pagarás en total?",
+          "Opción a": "$90",
+          "Opción b": "$105",
+          "Opción c": "$120",
+          "Opción d": "$135",
+          "Respuestas": "b) $105",
+          "Explicación": "Se determina el costo total de la compra de 2 camisetas a $15 cada una y 3 pantalones a $30 cada uno, resultando en un total de $105. Respuesta: $105.",
+          "Tema relacionado con la pregunta": "Problemas de aplicación"
+        }
+      ]
+    }
+  ]
+}
