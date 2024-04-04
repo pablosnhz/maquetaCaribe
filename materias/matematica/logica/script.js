@@ -41,19 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="question ml-sm-5 pl-sm-5 pt-2">
                     <div class="py-2 h5 mb-4"><b>Pregunta ${pregunta.Pregunta}: ${pregunta.Enunciado}</b></div>
                     <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options${index}">
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_a" name="options${index}" value="a" ${(storedResponse === 'a') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_a">A) ${pregunta['Opción a']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_b" name="options${index}" value="b" ${(storedResponse === 'b') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_b">B) ${pregunta['Opción b']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_c" name="options${index}" value="c" ${(storedResponse === 'c') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_c">C) ${pregunta['Opción c']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_d" name="options${index}" value="d" ${(storedResponse === 'd') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_d">D) ${pregunta['Opción d']}</label>
                         </div>
