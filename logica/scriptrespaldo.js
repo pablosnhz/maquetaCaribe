@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionsData = null;
     const totalQuestionsToShow = 15;
     let currentLevel = 1;
-
+    
 
     function loadQuestions(nivel) {
-
         fetch('./../../../json/matematica/nivelUnoMat.json')
             .then(response => {
                 if (!response.ok) {
@@ -42,19 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="question ml-sm-5 pl-sm-5 pt-2">
                     <div class="py-2 h5 mb-4"><b>Pregunta ${pregunta.Pregunta}: ${pregunta.Enunciado}</b></div>
                     <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options${index}">
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_a" name="options${index}" value="a" ${(storedResponse === 'a') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_a">A) ${pregunta['Opción a']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_b" name="options${index}" value="b" ${(storedResponse === 'b') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_b">B) ${pregunta['Opción b']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_c" name="options${index}" value="c" ${(storedResponse === 'c') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_c">C) ${pregunta['Opción c']}</label>
                         </div>
-                        <div class="option mb-2">
+                        <div class="option mb-3">
                             <input type="radio" id="option_d" name="options${index}" value="d" ${(storedResponse === 'd') ? 'checked' : ''} ${storedResponse ? 'disabled' : ''}>
                             <label for="option_d">D) ${pregunta['Opción d']}</label>
                         </div>
@@ -114,32 +113,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // al responder las 15 preguntas detecta el check
                         updateLevelLockButton(currentLevel);
+                        
                     }
                 });
             });
         });
-
-            // logica para el check
-            updateLevelLockButton(currentLevel);
+        
+        // logica para el check
+        updateLevelLockButton(currentLevel);
         }
     }
 
+    // metodo para el check de los niveles al finalizar las 15 preguntas por nivel
     function updateLevelLockButton(level) {
-        const allAnswered = Array.from({ length: totalQuestionsToShow }, (_, i) =>
-            localStorage.getItem(`response_${level}_${i}`) !== null
-        ).every(Boolean);
-    
-        const levelLockButton = document.getElementById(`levelLockButton${level}`);
-        if (allAnswered) {
-            levelLockButton.innerHTML = '<i class="bi bi-check-lg"></i>';
-            levelLockButton.classList.remove('btn-secondary');
-            levelLockButton.classList.add('btn-success');
-        } else {
-            levelLockButton.innerHTML = '<i class="bi bi-lock"></i>';
-            levelLockButton.classList.remove('btn-success');
-            levelLockButton.classList.add('btn-secondary');
+        for (let i = 1; i <= 4; i++) {
+            const allAnswered = Array.from({ length: totalQuestionsToShow }, (_, j) =>
+                localStorage.getItem(`response_${i}_${j}`) !== null
+            ).every(Boolean);
+        
+            const levelLockButton = document.getElementById(`levelLockButton${i}`);
+            if (allAnswered) {
+                levelLockButton.innerHTML = '<i class="bi bi-check-lg"></i>';
+                levelLockButton.classList.remove('btn-secondary');
+                levelLockButton.classList.add('btn-success');
+                localStorage.setItem(`successState_${i}`, 'true'); 
+            } else {
+                levelLockButton.innerHTML = '<i class="bi bi-lock"></i>';
+                levelLockButton.classList.remove('btn-success');
+                levelLockButton.classList.add('btn-secondary');
+                localStorage.removeItem(`successState_${i}`); 
+            }
         }
     }
+    
     
 
     loadQuestions(1);
@@ -170,8 +176,42 @@ document.addEventListener("DOMContentLoaded", function () {
             loadQuestions(currentLevel);
         });
     }
+
+
+
+
+    function iniciarTemporizador() {
+        let segundos = 0;
+        setInterval(function() {
+          segundos++;
+          const horas = Math.floor(segundos / 3600);
+          const minutos = Math.floor((segundos % 3600) / 60);
+          const segundosRestantes = segundos % 60;
+          document.getElementById('temporizador').innerText = `${horas < 10 ? '0' : ''}${horas}:${minutos < 10 ? '0' : ''}${minutos}:${segundosRestantes < 10 ? '0' : ''}${segundosRestantes}`;
+        }, 1000);
+      }
+  
+      // temporizador cuando se cargue la página
+      window.onload = function() {
+        iniciarTemporizador();
+      };
+
+      
 });
 
 
 
+function actualizarImagenesNiveles() {
+    for (let i = 1; i <= 4; i++) {
+        const nivelCompletado = localStorage.getItem(`successState_${i}`) === 'true';
+        const imagenNivel = document.getElementById(`nivel${i}`).querySelector('img');
+        if (nivelCompletado) {
+            imagenNivel.src = "https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Circle-512.png";
+        } else {
+            imagenNivel.src ="https://icones.pro/wp-content/uploads/2022/08/icone-de-cadenas-de-securite-gris.png"
+        }
+    }
+}
+
+actualizarImagenesNiveles();
 

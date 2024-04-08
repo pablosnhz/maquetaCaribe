@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionsData = null;
     const totalQuestionsToShow = 15;
     let currentLevel = 1;
-    
+    let segundos = 0;
+    let intervaloTemporizador = null;
 
     function loadQuestions(nivel) {
         fetch('./../../../json/matematica/nivelUnoMat.json')
@@ -117,9 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         });
-
-            // logica para el check
-            updateLevelLockButton(currentLevel);
+        
+        // logica para el check
+        updateLevelLockButton(currentLevel);
+        toggleResetButtonVisibility();
         }
     }
 
@@ -143,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.removeItem(`successState_${i}`); 
             }
         }
+        toggleResetButtonVisibility();
     }
     
     
@@ -194,8 +197,53 @@ document.addEventListener("DOMContentLoaded", function () {
       window.onload = function() {
         iniciarTemporizador();
       };
+
+      
+      function checkAllQuestionsAnswered() {
+        for (let i = 1; i <= 4; i++) {
+            const allAnswered = Array.from({ length: totalQuestionsToShow }, (_, j) =>
+                localStorage.getItem(`response_${i}_${j}`) !== null
+            ).every(Boolean);
+
+            if (!allAnswered) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Método para mostrar u ocultar el botón de reset
+    function toggleResetButtonVisibility() {
+        if (checkAllQuestionsAnswered()) {
+            resetButton.classList.remove('d-none');
+        } else {
+            resetButton.classList.add('d-none');
+        }
+    }
+
+
+
+    resetButton.addEventListener('click', function () {
+        localStorage.clear();
+        window.location.reload();
+    });
+      
 });
 
 
+
+function actualizarImagenesNiveles() {
+    for (let i = 1; i <= 4; i++) {
+        const nivelCompletado = localStorage.getItem(`successState_${i}`) === 'true';
+        const imagenNivel = document.getElementById(`nivel${i}`).querySelector('img');
+        if (nivelCompletado) {
+            imagenNivel.src = "https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Circle-512.png";
+        } else {
+            imagenNivel.src ="https://icones.pro/wp-content/uploads/2022/08/icone-de-cadenas-de-securite-gris.png"
+        }
+    }
+}
+
+actualizarImagenesNiveles();
 
 
