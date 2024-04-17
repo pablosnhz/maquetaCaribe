@@ -28,12 +28,18 @@
     border: 2px solid black;
 }
 
+.img-fluid {
+    max-width: 80%;  /* Ajusta el máximo ancho a 50% del contenedor */
+    height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+
 .caja {
     margin-top: 2rem;
 }
 
 .caja h1{
-    text-align: center;
+    text-align:center;
     margin-top: 1rem;
     font-size: 1.3rem;
     color: rgb(122, 130, 138);
